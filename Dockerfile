@@ -1,4 +1,4 @@
-FROM ninefx/alpine-fips:3.6
+FROM ubuntu:18.04
 WORKDIR /usr/local/bin
 COPY ./main /usr/local/bin/
 COPY ./run.sh /usr/local/bin/
