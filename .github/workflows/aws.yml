@@ -33,7 +33,7 @@ on:
 env:
     AWS_REGION: us-west-1                   # set this to your preferred AWS region, e.g. us-west-1
     ECR_REPOSITORY: ingaged-auth-service    # set this to your Amazon ECR repository name
-    ECS_SERVICE: ingaged-auth                 # set this to your Amazon ECS service name
+    ECS_SERVICE: ingaged-auth-service                 # set this to your Amazon ECS service name
     ECS_CLUSTER: ingaged-auth-service-cluster                 # set this to your Amazon ECS cluster name
     ECS_TASK_DEFINITION: .aws/first-run-task-definition.json # set this to the path to your Amazon ECS task definition
                                                   # file, e.g. .aws/task-definition.json
@@ -59,7 +59,7 @@ jobs:
         go-version: 1.18
 
     - name: Build
-      run: go build -v cmd/test-http/main.go
+      run: GOOS=linux GOARCH=amd64 go build -v cmd/test-http/main.go
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
