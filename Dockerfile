@@ -3,4 +3,4 @@ WORKDIR /usr/local/bin
 COPY ./main /usr/local/bin/
 EXPOSE 8000
 ENTRYPOINT ["sh"]
-CMD ["main"]
+# CMD ["main"]
