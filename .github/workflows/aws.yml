@@ -59,7 +59,7 @@ jobs:
         go-version: 1.18
 
     - name: Build
-      run: echo building && pwd && GOOS=linux GOARCH=amd64 go build -v cmd/test-http/main.go
+      run: echo building && pwd && GOOS=linux GOARCH=amd64 go build -v cmd/test-http/main.go && echo done && ls
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
